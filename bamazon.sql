@@ -1,0 +1,33 @@
+DROP DATABASE IF EXISTS bamazon;
+
+CREATE DATABASE bamazon;
+
+USE bamazon;
+
+
+CREATE TABLE products (
+    item_id INT NOT NULL AUTO_INCREMENT,
+    product_name VARCHAR(50) NULL,
+    department_name VARCHAR (50) NULL,
+    price DECIMAL (10,2) NULL,
+    stock_quantity INT NULL,
+    product_sales DECIMAL (10,2) NULL,
+    PRIMARY KEY (item_id)
+);
+
+
+INSERT INTO products (product_name, department_name, price, stock_quantity, product_sales)
+VALUES ("TYLENOL ARTHRITIS PAIN 650MG CPLTS (215)", "PAIN",14.99, 10, 0.00),
+("EMERGEN-C 1000MG STRAW KIWI PK (30)", "VITAMINS", 19.99, 3, 0.00),
+("NEXIUM 20MG CAPS (14)", "STOMACH", 29.99, 7, 0.00),
+("NEXIUM 20MG CAPS (28)", "STOMACH", 49.99, 0, 0.00),
+("ANTI-NAUSEANT DIPMENHYDRINATE 50MG TABS (30)", "STOMACH", 2.99, 40, 0.00),
+("JOINT EASE GLUCOSAMINE SULFATE 750MG CAPS (250)", "NATURAL HEALTH PRODUCTS", 39.99, 5, 0.00),
+("CALCIUM VITAMIN D3 600/400 CAPS (90)", "VITAMINS", 14.99, 5, 0.00),
+("ALLEGRA 120MG TAB (18)", "ANTIHISTAMINES", 14.99, 7, 0.00),
+("NATURE'S BOUNTY VITAMIN E 400IU CAPS (100)", "VITAMINS", 17.99, 10, 0.00),
+("JAM STRESS EASE B COMPLEX (90)", "VITAMINS", 13.99, 6, 0.00),
+("HUGO PREMIUM WALKER (RED)", "HOME HEALTH CARE", 299.99, 2, 0.00);
+
+SELECT item_id, product_name, department_name, price, stock_quantity, product_sales
+FROM products
